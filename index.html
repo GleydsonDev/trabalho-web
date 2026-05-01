@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gleydson Raniery | Portfólio</title>
+  <!-- Link para o arquivo de estilos externo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CABEÇALHO / MENU DE NAVEGAÇÃO ========== -->
+  <!-- O menu fica fixo no topo e aparece em todas as seções -->
+  <header>
+    <nav>
+      <!-- Logo / Nome no menu -->
+      <div class="logo">Gleydson Raniery</div>
+
+      <!-- Botão hamburguer para dispositivos móveis (controlado pelo JS) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+
+      <!-- Lista de links de navegação usando âncoras para rolar até cada seção -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#sobre">Sobre mim</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+
+      <!-- Botão para alternar entre tema claro e escuro -->
+      <button class="tema-btn" id="temaBtn" title="Alternar tema">🌙</button>
+    </nav>
+  </header>
+
+  <!-- ========== SEÇÃO 1: SOBRE MIM ========== -->
+  <section id="sobre" class="secao">
+    <div class="container">
+      <h2 class="titulo-secao">Sobre mim</h2>
+
+      <!-- Apresentação pessoal -->
+      <div class="sobre-conteudo">
+        <div class="sobre-texto">
+          <h3>Olá! Sou Gleydson Raniery 👋</h3>
+          <p>
+            Estudante de <strong>Ciência da Computação</strong> (UNINTER) e 
+            <strong>Técnico em Inteligência Artificial</strong> (IMD/UFRN), 
+            baseado em <strong>Natal/RN</strong>. Apaixonado por dados, IA e automação de processos.
+          </p>
+          <p>
+            Tenho experiência prática em análise de dados, machine learning e suporte técnico N2, 
+            com foco em transformar dados em decisões inteligentes.
+          </p>
+
+          <!-- Informações de contato rápidas -->
+          <ul class="info-lista">
+            <li>📍 Natal/RN</li>
+            <li>📧 gleydson.ranierytrabalho@gmail.com</li>
+            <li>📱 (84) 98624-6736</li>
+            <li>🌐 <a href="https://linkedin.com/in/gleydson-raniery-63295a33a" target="_blank">LinkedIn</a></li>
+            <li>💻 <a href="https://github.com/GleydsonDev" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+
+        <!-- Card de habilidades e hobbies -->
+        <div class="sobre-card">
+          <h4>Competências principais</h4>
+          <ul class="habilidades">
+            <li>🐍 Python</li>
+            <li>📊 Machine Learning</li>
+            <li>📈 Power BI</li>
+            <li>🗄️ SQL</li>
+            <li>🔧 Git & GitHub</li>
+            <li>🤖 IA & Automação</li>
+          </ul>
+          <h4>Hobbies</h4>
+          <p>Leitura técnica, resolução de problemas, estudos de matemática e aprendizado contínuo em IA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 2: FORMAÇÃO ========== -->
+  <section id="formacao" class="secao secao-escura">
+    <div class="container">
+      <h2 class="titulo-secao">Formação</h2>
+
+      <!-- Formação Acadêmica -->
+      <h3 class="sub-titulo">🎓 Formação Acadêmica</h3>
+      <div class="cards-grade">
+
+        <div class="card">
+          <h4>Técnico em Inteligência Artificial</h4>
+          <p class="instituicao">Metrópole Digital / IMD/UFRN</p>
+          <p class="periodo">Fev/2026 – Dez/2028 | Natal/RN</p>
+          <p>Formação focada em IA, Machine Learning e Ciência de Dados.</p>
+        </div>
+
+        <div class="card">
+          <h4>Bacharelado em Ciência da Computação</h4>
+          <p class="instituicao">UNINTER</p>
+          <p class="periodo">Início: 2025 | Conclusão prevista: 2029</p>
+          <p>Formação em computação com foco em desenvolvimento e análise de sistemas.</p>
+        </div>
+
+        <div class="card">
+          <h4>Ensino Médio Completo</h4>
+          <p class="instituicao">Escola Encanto</p>
+          <p class="periodo">Conclusão: 2021 | Natal/RN</p>
+        </div>
+
+      </div>
+
+      <!-- Certificações -->
+      <h3 class="sub-titulo">📜 Certificações</h3>
+      <div class="cards-grade">
+
+        <div class="card destaque">
+          <h4>Introdução ao Machine Learning com Python</h4>
+          <p class="instituicao">USP – ESALQ</p>
+          <p class="periodo">Mar/2026 | Curso de Extensão Universitária</p>
+          <p>Fundamentos de ML, algoritmos de classificação e regressão, avaliação de modelos com Python.</p>
+        </div>
+
+        <div class="card destaque">
+          <h4>EFOMM – Marinha Mercante</h4>
+          <p class="instituicao">CIABA – Belém/PA</p>
+          <p class="periodo">Mar/2024</p>
+          <p>Aprovado no processo seletivo de alta exigência acadêmica da Marinha do Brasil.</p>
+        </div>
+
+      </div>
+
+      <!-- Idiomas -->
+      <h3 class="sub-titulo">🌍 Idiomas</h3>
+      <div class="cards-grade">
+        <div class="card">
+          <h4>Inglês</h4>
+          <p>Avançado — leitura e escrita técnica, comunicação oral em reuniões internacionais.</p>
+        </div>
+        <div class="card">
+          <h4>Português</h4>
+          <p>Nativo</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 3: PORTFÓLIO ========== -->
+  <section id="portfolio" class="secao">
+    <div class="container">
+      <h2 class="titulo-secao">Portfólio</h2>
+      <p class="subtexto">Projetos desenvolvidos com Python, Machine Learning e análise de dados.</p>
+
+      <!-- Grade de projetos -->
+      <div class="cards-grade">
+
+        <div class="card projeto">
+          <div class="projeto-icon">🤖</div>
+          <h4>Previsão de Score de Crédito</h4>
+          <p>Modelos preditivos com Árvore de Decisão e KNN, alcançando 82% de acurácia.</p>
+          <p class="tecnologias">Python · Scikit-learn · Pandas · NumPy · Jupyter</p>
+          <a href="https://github.com/GleydsonDev" target="_blank" class="btn-projeto">Ver no GitHub</a>
+        </div>
+
+        <div class="card projeto">
+          <div class="projeto-icon">📉</div>
+          <h4>Análise de Churn de Clientes</h4>
+          <p>Dashboards interativos para identificar padrões de cancelamento e apoiar decisões estratégicas.</p>
+          <p class="tecnologias">Python · Pandas · Matplotlib · Power BI</p>
+          <a href="https://github.com/GleydsonDev" target="_blank" class="btn-projeto">Ver no GitHub</a>
+        </div>
+
+        <div class="card projeto">
+          <div class="projeto-icon">📊</div>
+          <h4>Automação de Relatórios</h4>
+          <p>Geração automática de relatórios Excel com Pandas e OpenPyXL, reduzindo tempo de análise manual.</p>
+          <p class="tecnologias">Python · Pandas · OpenPyXL</p>
+          <a href="https://github.com/GleydsonDev" target="_blank" class="btn-projeto">Ver no GitHub</a>
+        </div>
+
+        <div class="card projeto">
+          <div class="projeto-icon">📁</div>
+          <h4>Portfólio de Análise de Dados</h4>
+          <p>Notebooks públicos com análise exploratória, manipulação de dados e visualização.</p>
+          <p class="tecnologias">Python · Jupyter · GitHub</p>
+          <a href="https://github.com/GleydsonDev" target="_blank" class="btn-projeto">Ver no GitHub</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 4: CONTATO ========== -->
+  <section id="contato" class="secao secao-escura">
+    <div class="container">
+      <h2 class="titulo-secao">Contato</h2>
+      <p class="subtexto">Fique à vontade para entrar em contato!</p>
+
+      <!-- Formulário de contato - validação feita pelo JavaScript -->
+      <form id="formContato" class="formulario" novalidate>
+
+        <!-- Campo: Nome -->
+        <div class="campo">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" />
+          <!-- Mensagem de erro que aparece via JS -->
+          <span class="erro" id="erroNome"></span>
+        </div>
+
+        <!-- Campo: E-mail -->
+        <div class="campo">
+          <label for="email">E-mail *</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" />
+          <span class="erro" id="erroEmail"></span>
+        </div>
+
+        <!-- Campo: Mensagem -->
+        <div class="campo">
+          <label for="mensagem">Mensagem *</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..."></textarea>
+          <span class="erro" id="erroMensagem"></span>
+        </div>
+
+        <!-- Botão de envio -->
+        <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+
+        <!-- Mensagem de sucesso (oculta por padrão, exibida pelo JS após envio) -->
+        <div class="sucesso" id="mensagemSucesso">
+          ✅ Mensagem enviada com sucesso! Entrarei em contato em breve.
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== RODAPÉ ========== -->
+  <footer>
+    <p>© 2025 Gleydson Raniery Macedo da Silva | Natal/RN</p>
+    <p>
+      <a href="https://github.com/GleydsonDev" target="_blank">GitHub</a> · 
+      <a href="https://linkedin.com/in/gleydson-raniery-63295a33a" target="_blank">LinkedIn</a>
+    </p>
+  </footer>
+
+  <!-- Link para o arquivo JavaScript externo -->
+  <script src="script.js"></script>
+
+</body>
+</html>

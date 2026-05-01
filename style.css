@@ -1,0 +1,435 @@
+/* ================================================
+   PORTFÓLIO - GLEYDSON RANIERY
+   Arquivo: style.css
+   Descrição: Estilos do portfólio pessoal
+   ================================================ */
+
+/* ---------- RESET E CONFIGURAÇÕES GLOBAIS ---------- */
+/* Remove margens e paddings padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Inclui borda e padding no tamanho total */
+}
+
+/* Variáveis de cor para o tema claro (padrão) */
+:root {
+  --cor-primaria: #2563eb;       /* Azul principal */
+  --cor-secundaria: #1e40af;     /* Azul mais escuro */
+  --cor-destaque: #3b82f6;       /* Azul claro */
+  --bg-claro: #f8fafc;           /* Fundo branco */
+  --bg-escuro-secao: #1e293b;   /* Fundo de seções escuras */
+  --texto-principal: #1e293b;    /* Texto principal escuro */
+  --texto-claro: #f1f5f9;        /* Texto claro (para fundos escuros) */
+  --texto-secundario: #64748b;   /* Texto secundário */
+  --borda: #e2e8f0;              /* Cor de bordas */
+  --card-bg: #ffffff;            /* Fundo dos cards */
+  --nav-bg: #1e293b;             /* Fundo do menu */
+}
+
+/* Variáveis para o tema escuro (aplicadas via JS quando usuário clica no botão) */
+body.tema-escuro {
+  --bg-claro: #0f172a;
+  --bg-escuro-secao: #1e293b;
+  --texto-principal: #f1f5f9;
+  --texto-secundario: #94a3b8;
+  --borda: #334155;
+  --card-bg: #1e293b;
+}
+
+/* Configuração base do documento */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: var(--bg-claro);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s; /* Transição suave ao trocar tema */
+}
+
+/* Links gerais */
+a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- MENU DE NAVEGAÇÃO ---------- */
+header {
+  position: fixed;       /* Fica fixo no topo da página */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;         /* Fica acima de todos os outros elementos */
+  background-color: var(--nav-bg);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 65px;
+}
+
+/* Nome/logo no menu */
+.logo {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Lista de links do menu */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--cor-destaque);
+  text-decoration: none;
+}
+
+/* Botão de alternar tema */
+.tema-btn {
+  background: none;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  color: #cbd5e1;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+.tema-btn:hover {
+  background-color: #334155;
+}
+
+/* Botão hamburguer (oculto em desktop, visível no mobile) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ---------- SEÇÕES PRINCIPAIS ---------- */
+.secao {
+  padding: 100px 20px 60px; /* Padding top maior por causa do menu fixo */
+  min-height: 100vh;         /* Cada seção ocupa pelo menos a tela inteira */
+}
+
+/* Seções com fundo escuro alternado */
+.secao-escura {
+  background-color: var(--bg-escuro-secao);
+  color: var(--texto-claro);
+}
+
+/* Container centralizado com largura máxima */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Título de cada seção */
+.titulo-secao {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--cor-primaria);
+  display: inline-block;
+}
+
+/* Subtítulo dentro das seções */
+.sub-titulo {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  color: var(--cor-destaque);
+}
+
+/* Texto de apoio abaixo do título */
+.subtexto {
+  color: var(--texto-secundario);
+  margin-bottom: 2rem;
+}
+
+/* ---------- SEÇÃO: SOBRE MIM ---------- */
+.sobre-conteudo {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* Quebra linha em telas menores */
+}
+
+.sobre-texto {
+  flex: 2;
+}
+
+.sobre-texto h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--cor-primaria);
+}
+
+.sobre-texto p {
+  margin-bottom: 1rem;
+  color: var(--texto-secundario);
+}
+
+/* Lista de contato rápido */
+.info-lista {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.info-lista li {
+  margin-bottom: 0.5rem;
+}
+
+/* Card lateral de habilidades */
+.sobre-card {
+  flex: 1;
+  min-width: 220px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.sobre-card h4 {
+  color: var(--cor-primaria);
+  margin-bottom: 0.8rem;
+}
+
+/* Lista de habilidades com bolinhas coloridas */
+.habilidades {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.habilidades li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- CARDS REUTILIZÁVEIS ---------- */
+/* Grade de cards responsiva */
+.cards-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilo base do card */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s; /* Efeito hover */
+}
+
+.card:hover {
+  transform: translateY(-4px);  /* Sobe um pouco ao passar o mouse */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-primaria);
+}
+
+/* Instituição/empresa no card */
+.instituicao {
+  font-weight: bold;
+  color: var(--texto-principal);
+  margin-bottom: 0.3rem;
+}
+
+/* Período no card */
+.periodo {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  margin-bottom: 0.5rem;
+}
+
+/* Card com destaque (borda colorida) */
+.destaque {
+  border-left: 4px solid var(--cor-primaria);
+}
+
+/* ---------- SEÇÃO: PORTFÓLIO ---------- */
+/* Card de projeto */
+.projeto {
+  text-align: center;
+}
+
+.projeto-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Tags de tecnologias usadas */
+.tecnologias {
+  font-size: 0.8rem;
+  color: var(--cor-destaque);
+  margin: 0.5rem 0 1rem;
+  font-style: italic;
+}
+
+/* Botão "Ver no GitHub" */
+.btn-projeto {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-projeto:hover {
+  background-color: var(--cor-secundaria);
+  text-decoration: none;
+}
+
+/* ---------- SEÇÃO: CONTATO ---------- */
+/* Formulário centralizado */
+.formulario {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Cada campo do formulário */
+.campo {
+  margin-bottom: 1.5rem;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  color: var(--texto-claro);
+}
+
+/* Inputs e textarea */
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  background-color: #334155;
+  color: #f1f5f9;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--cor-destaque);
+}
+
+/* Mensagem de erro (exibida via JS) */
+.erro {
+  color: #f87171;    /* Vermelho */
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 0.3rem;
+  min-height: 1rem;
+}
+
+/* Botão de enviar */
+.btn-enviar {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-enviar:hover {
+  background-color: var(--cor-secundaria);
+}
+
+/* Mensagem de sucesso (oculta por padrão) */
+.sucesso {
+  display: none;             /* Escondida até o JS mostrar */
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #166534;
+  color: #bbf7d0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ---------- RODAPÉ ---------- */
+footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 2rem;
+}
+
+footer a {
+  color: var(--cor-destaque);
+}
+
+/* ---------- RESPONSIVIDADE (MOBILE) ---------- */
+/* Estilos para telas com largura até 768px (celular/tablet) */
+@media (max-width: 768px) {
+
+  /* Exibe o botão hamburguer */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Esconde o menu por padrão no mobile */
+  .nav-links {
+    display: none;        /* Oculto por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    padding: 1rem 2rem;
+    gap: 1rem;
+  }
+
+  /* Classe adicionada pelo JS para mostrar o menu no mobile */
+  .nav-links.aberto {
+    display: flex;
+  }
+
+  /* Ajusta o layout do "Sobre mim" para coluna em mobile */
+  .sobre-conteudo {
+    flex-direction: column;
+  }
+
+  /* Títulos menores no mobile */
+  .titulo-secao {
+    font-size: 1.5rem;
+  }
+}
