@@ -2,68 +2,70 @@
    PORTFÓLIO - GLEYDSON RANIERY
    Arquivo: style.css
    Descrição: Estilos do portfólio pessoal
+   Tema: Dark cinza/branco
    ================================================ */
 
 /* ---------- RESET E CONFIGURAÇÕES GLOBAIS ---------- */
-/* Remove margens e paddings padrão do navegador */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Inclui borda e padding no tamanho total */
+  box-sizing: border-box;
 }
 
-/* Variáveis de cor para o tema claro (padrão) */
+/* Variáveis de cor — tema escuro cinza/branco (padrão) */
 :root {
-  --cor-primaria: #2563eb;       /* Azul principal */
-  --cor-secundaria: #1e40af;     /* Azul mais escuro */
-  --cor-destaque: #3b82f6;       /* Azul claro */
-  --bg-claro: #f8fafc;           /* Fundo branco */
-  --bg-escuro-secao: #1e293b;   /* Fundo de seções escuras */
-  --texto-principal: #1e293b;    /* Texto principal escuro */
-  --texto-claro: #f1f5f9;        /* Texto claro (para fundos escuros) */
-  --texto-secundario: #64748b;   /* Texto secundário */
-  --borda: #e2e8f0;              /* Cor de bordas */
-  --card-bg: #ffffff;            /* Fundo dos cards */
-  --nav-bg: #1e293b;             /* Fundo do menu */
-}
-
-/* Variáveis para o tema escuro (aplicadas via JS quando usuário clica no botão) */
-body.tema-escuro {
-  --bg-claro: #0f172a;
-  --bg-escuro-secao: #1e293b;
+  --cor-primaria: #e2e8f0;
+  --cor-secundaria: #94a3b8;
+  --cor-destaque: #cbd5e1;
+  --bg-claro: #111318;
+  --bg-escuro-secao: #1a1d24;
   --texto-principal: #f1f5f9;
+  --texto-claro: #f1f5f9;
   --texto-secundario: #94a3b8;
-  --borda: #334155;
-  --card-bg: #1e293b;
+  --borda: #2d3139;
+  --card-bg: #1e2128;
+  --nav-bg: #0d0f13;
+  --destaque-linha: #4b5563;
 }
 
-/* Configuração base do documento */
+/* Tema claro (ativado via JS) */
+body.tema-claro {
+  --bg-claro: #f1f5f9;
+  --bg-escuro-secao: #e2e8f0;
+  --texto-principal: #1e293b;
+  --texto-claro: #1e293b;
+  --texto-secundario: #475569;
+  --borda: #cbd5e1;
+  --card-bg: #ffffff;
+  --nav-bg: #1e293b;
+  --destaque-linha: #94a3b8;
+}
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: var(--bg-claro);
   color: var(--texto-principal);
   line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s; /* Transição suave ao trocar tema */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Links gerais */
 a {
   color: var(--cor-destaque);
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  color: #ffffff;
 }
 
 /* ---------- MENU DE NAVEGAÇÃO ---------- */
 header {
-  position: fixed;       /* Fica fixo no topo da página */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;         /* Fica acima de todos os outros elementos */
+  z-index: 1000;
   background-color: var(--nav-bg);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border-bottom: 1px solid var(--borda);
 }
 
 nav {
@@ -74,15 +76,14 @@ nav {
   height: 65px;
 }
 
-/* Nome/logo no menu */
 .logo {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-/* Lista de links do menu */
 .nav-links {
   list-style: none;
   display: flex;
@@ -90,32 +91,32 @@ nav {
 }
 
 .nav-links a {
-  color: #cbd5e1;
-  font-size: 0.95rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: var(--cor-destaque);
-  text-decoration: none;
+  color: #ffffff;
 }
 
-/* Botão de alternar tema */
 .tema-btn {
   background: none;
-  border: 1px solid #475569;
+  border: 1px solid #374151;
   border-radius: 6px;
-  color: #cbd5e1;
+  color: #94a3b8;
   padding: 5px 10px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 }
 .tema-btn:hover {
-  background-color: #334155;
+  background-color: #1f2937;
+  color: #ffffff;
 }
 
-/* Botão hamburguer (oculto em desktop, visível no mobile) */
 .menu-toggle {
   display: none;
   background: none;
@@ -127,39 +128,38 @@ nav {
 
 /* ---------- SEÇÕES PRINCIPAIS ---------- */
 .secao {
-  padding: 100px 20px 60px; /* Padding top maior por causa do menu fixo */
-  min-height: 100vh;         /* Cada seção ocupa pelo menos a tela inteira */
+  padding: 100px 20px 70px;
+  min-height: 100vh;
 }
 
-/* Seções com fundo escuro alternado */
 .secao-escura {
   background-color: var(--bg-escuro-secao);
-  color: var(--texto-claro);
 }
 
-/* Container centralizado com largura máxima */
 .container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Título de cada seção */
 .titulo-secao {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid var(--cor-primaria);
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--destaque-linha);
   display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--texto-principal);
 }
 
-/* Subtítulo dentro das seções */
 .sub-titulo {
-  font-size: 1.3rem;
-  margin: 2rem 0 1rem;
-  color: var(--cor-destaque);
+  font-size: 1rem;
+  margin: 2.5rem 0 1rem;
+  color: var(--texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Texto de apoio abaixo do título */
 .subtexto {
   color: var(--texto-secundario);
   margin-bottom: 2rem;
@@ -168,18 +168,37 @@ nav {
 /* ---------- SEÇÃO: SOBRE MIM ---------- */
 .sobre-conteudo {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap; /* Quebra linha em telas menores */
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Foto de perfil circular */
+.foto-perfil-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--destaque-linha);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
 .sobre-texto {
   flex: 2;
+  min-width: 260px;
 }
 
 .sobre-texto h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: var(--cor-primaria);
+  color: var(--texto-principal);
 }
 
 .sobre-texto p {
@@ -187,7 +206,6 @@ nav {
   color: var(--texto-secundario);
 }
 
-/* Lista de contato rápido */
 .info-lista {
   list-style: none;
   margin-top: 1.5rem;
@@ -195,126 +213,130 @@ nav {
 
 .info-lista li {
   margin-bottom: 0.5rem;
+  color: var(--texto-secundario);
 }
 
-/* Card lateral de habilidades */
+.info-lista a {
+  color: var(--cor-destaque);
+}
+
 .sobre-card {
   flex: 1;
-  min-width: 220px;
+  min-width: 200px;
   background-color: var(--card-bg);
   border: 1px solid var(--borda);
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .sobre-card h4 {
-  color: var(--cor-primaria);
+  color: var(--texto-principal);
   margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Lista de habilidades com bolinhas coloridas */
 .habilidades {
   list-style: none;
   margin-bottom: 1.5rem;
 }
 
 .habilidades li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   font-size: 0.95rem;
+  color: var(--texto-secundario);
 }
 
-/* ---------- CARDS REUTILIZÁVEIS ---------- */
-/* Grade de cards responsiva */
+/* ---------- CARDS ---------- */
 .cards-grade {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.5rem;
+  gap: 1.2rem;
   margin-bottom: 1rem;
 }
 
-/* Estilo base do card */
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--borda);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.2s, box-shadow 0.2s; /* Efeito hover */
+  transition: transform 0.2s, border-color 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-4px);  /* Sobe um pouco ao passar o mouse */
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+  border-color: var(--destaque-linha);
 }
 
 .card h4 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
-  color: var(--cor-primaria);
+  color: var(--texto-principal);
 }
 
-/* Instituição/empresa no card */
 .instituicao {
   font-weight: bold;
-  color: var(--texto-principal);
+  color: var(--cor-secundaria);
   margin-bottom: 0.3rem;
+  font-size: 0.9rem;
 }
 
-/* Período no card */
 .periodo {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--texto-secundario);
   margin-bottom: 0.5rem;
 }
 
-/* Card com destaque (borda colorida) */
-.destaque {
-  border-left: 4px solid var(--cor-primaria);
+.card p {
+  color: var(--texto-secundario);
+  font-size: 0.92rem;
 }
 
-/* ---------- SEÇÃO: PORTFÓLIO ---------- */
-/* Card de projeto */
+.destaque {
+  border-left: 3px solid var(--destaque-linha);
+}
+
+/* ---------- PORTFÓLIO ---------- */
 .projeto {
   text-align: center;
 }
 
 .projeto-icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 0.8rem;
 }
 
-/* Tags de tecnologias usadas */
 .tecnologias {
-  font-size: 0.8rem;
-  color: var(--cor-destaque);
+  font-size: 0.78rem;
+  color: var(--texto-secundario);
   margin: 0.5rem 0 1rem;
-  font-style: italic;
+  letter-spacing: 0.5px;
 }
 
-/* Botão "Ver no GitHub" */
 .btn-projeto {
   display: inline-block;
-  background-color: var(--cor-primaria);
-  color: white;
+  background-color: transparent;
+  color: var(--cor-destaque);
+  border: 1px solid var(--destaque-linha);
   padding: 0.5rem 1.2rem;
   border-radius: 6px;
-  transition: background-color 0.2s;
+  font-size: 0.88rem;
+  transition: all 0.2s;
 }
 
 .btn-projeto:hover {
-  background-color: var(--cor-secundaria);
+  background-color: var(--destaque-linha);
+  color: #ffffff;
   text-decoration: none;
 }
 
-/* ---------- SEÇÃO: CONTATO ---------- */
-/* Formulário centralizado */
+/* ---------- CONTATO ---------- */
 .formulario {
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto;
 }
 
-/* Cada campo do formulário */
 .campo {
   margin-bottom: 1.5rem;
 }
@@ -322,20 +344,21 @@ nav {
 .campo label {
   display: block;
   margin-bottom: 0.4rem;
-  font-weight: bold;
-  color: var(--texto-claro);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--texto-secundario);
 }
 
-/* Inputs e textarea */
 .campo input,
 .campo textarea {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #475569;
-  border-radius: 8px;
-  background-color: #334155;
-  color: #f1f5f9;
-  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  color: var(--texto-principal);
+  font-size: 0.95rem;
   font-family: inherit;
   transition: border-color 0.2s;
 }
@@ -343,53 +366,54 @@ nav {
 .campo input:focus,
 .campo textarea:focus {
   outline: none;
-  border-color: var(--cor-destaque);
+  border-color: var(--destaque-linha);
 }
 
-/* Mensagem de erro (exibida via JS) */
 .erro {
-  color: #f87171;    /* Vermelho */
-  font-size: 0.85rem;
+  color: #f87171;
+  font-size: 0.82rem;
   display: block;
   margin-top: 0.3rem;
   min-height: 1rem;
 }
 
-/* Botão de enviar */
 .btn-enviar {
   width: 100%;
   padding: 0.9rem;
-  background-color: var(--cor-primaria);
-  color: white;
+  background-color: var(--destaque-linha);
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .btn-enviar:hover {
-  background-color: var(--cor-secundaria);
+  background-color: #6b7280;
 }
 
-/* Mensagem de sucesso (oculta por padrão) */
 .sucesso {
-  display: none;             /* Escondida até o JS mostrar */
+  display: none;
   margin-top: 1.5rem;
   padding: 1rem;
-  background-color: #166534;
+  background-color: #14532d;
   color: #bbf7d0;
-  border-radius: 8px;
+  border-radius: 6px;
   text-align: center;
-  font-weight: bold;
+  font-size: 0.95rem;
 }
 
 /* ---------- RODAPÉ ---------- */
 footer {
-  background-color: #0f172a;
-  color: #94a3b8;
+  background-color: var(--nav-bg);
+  color: var(--texto-secundario);
   text-align: center;
   padding: 2rem;
+  font-size: 0.88rem;
+  border-top: 1px solid var(--borda);
 }
 
 footer a {
@@ -397,17 +421,14 @@ footer a {
 }
 
 /* ---------- RESPONSIVIDADE (MOBILE) ---------- */
-/* Estilos para telas com largura até 768px (celular/tablet) */
 @media (max-width: 768px) {
 
-  /* Exibe o botão hamburguer */
   .menu-toggle {
     display: block;
   }
 
-  /* Esconde o menu por padrão no mobile */
   .nav-links {
-    display: none;        /* Oculto por padrão */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 65px;
@@ -416,20 +437,24 @@ footer a {
     background-color: var(--nav-bg);
     padding: 1rem 2rem;
     gap: 1rem;
+    border-bottom: 1px solid var(--borda);
   }
 
-  /* Classe adicionada pelo JS para mostrar o menu no mobile */
   .nav-links.aberto {
     display: flex;
   }
 
-  /* Ajusta o layout do "Sobre mim" para coluna em mobile */
   .sobre-conteudo {
     flex-direction: column;
+    align-items: center;
   }
 
-  /* Títulos menores no mobile */
+  .foto-perfil {
+    width: 130px;
+    height: 130px;
+  }
+
   .titulo-secao {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }

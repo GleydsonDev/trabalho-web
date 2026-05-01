@@ -40,13 +40,14 @@ const temaBtn = document.getElementById('temaBtn');
 temaBtn.addEventListener('click', function() {
   // Alterna a classe 'tema-escuro' no body
   // O CSS usa essa classe para aplicar as cores escuras via variáveis CSS
-  document.body.classList.toggle('tema-escuro');
+  // Padrão é escuro; ao clicar ativa tema claro
+  document.body.classList.toggle('tema-claro');
 
   // Muda o ícone do botão conforme o tema ativo
-  if (document.body.classList.contains('tema-escuro')) {
-    temaBtn.textContent = '☀️'; // Ícone de sol no tema escuro (para indicar "mudar para claro")
+  if (document.body.classList.contains('tema-claro')) {
+    temaBtn.textContent = '🌙'; // Ícone de lua — clica para voltar ao escuro
   } else {
-    temaBtn.textContent = '🌙'; // Ícone de lua no tema claro (para indicar "mudar para escuro")
+    temaBtn.textContent = '☀️'; // Ícone de sol — clica para ir ao claro
   }
 });
 
