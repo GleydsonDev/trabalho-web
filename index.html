@@ -39,8 +39,15 @@
 
       <!-- Apresentação pessoal -->
       <div class="sobre-conteudo">
+
+        <!-- Foto de perfil -->
+        <div class="foto-perfil-wrapper">
+          <img src="foto.jpg" alt="Foto de Gleydson Raniery" class="foto-perfil" />
+        </div>
+
         <div class="sobre-texto">
-          <h3>Olá! Sou Gleydson Raniery 👋</h3>
+          <!-- O texto do h3 é preenchido pelo efeito digitando no script.js -->
+          <h3 id="titulo-digitando"></h3>
           <p>
             Estudante de <strong>Ciência da Computação</strong> (UNINTER) e 
             <strong>Técnico em Inteligência Artificial</strong> (IMD/UFRN), 
@@ -61,18 +68,45 @@
           </ul>
         </div>
 
-        <!-- Card de habilidades e hobbies -->
+        <!-- Card de habilidades com barras animadas -->
         <div class="sobre-card">
           <h4>Competências principais</h4>
-          <ul class="habilidades">
-            <li>🐍 Python</li>
-            <li>📊 Machine Learning</li>
-            <li>📈 Power BI</li>
-            <li>🗄️ SQL</li>
-            <li>🔧 Git & GitHub</li>
-            <li>🤖 IA & Automação</li>
-          </ul>
-          <h4>Hobbies</h4>
+
+          <!-- Barras de habilidades — o JS anima a largura ao entrar na tela -->
+          <div class="skill-bars">
+            <div class="skill">
+              <span class="skill-nome">🐍 Python</span>
+              <div class="barra-fundo">
+                <div class="barra-preenchimento" data-nivel="85"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-nome">📊 Machine Learning</span>
+              <div class="barra-fundo">
+                <div class="barra-preenchimento" data-nivel="75"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-nome">📈 Power BI</span>
+              <div class="barra-fundo">
+                <div class="barra-preenchimento" data-nivel="70"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-nome">🗄️ SQL</span>
+              <div class="barra-fundo">
+                <div class="barra-preenchimento" data-nivel="65"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <span class="skill-nome">🔧 Git & GitHub</span>
+              <div class="barra-fundo">
+                <div class="barra-preenchimento" data-nivel="80"></div>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="margin-top:1rem">Hobbies</h4>
           <p>Leitura técnica, resolução de problemas, estudos de matemática e aprendizado contínuo em IA.</p>
         </div>
       </div>

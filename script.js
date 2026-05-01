@@ -150,3 +150,77 @@ linksAncora.forEach(function(link) {
     }
   });
 });
+
+
+// ================================================
+// 5. EFEITO DIGITANDO NO TÍTULO
+// Simula o texto sendo digitado letra por letra
+// ================================================
+
+// Texto que será "digitado" na tela
+const textoDigitando = 'Olá! Sou Gleydson Raniery 👋';
+const elementoTitulo = document.getElementById('titulo-digitando');
+let indiceLetra = 0; // Controla qual letra está sendo digitada
+
+function digitar() {
+  if (indiceLetra < textoDigitando.length) {
+    // Adiciona uma letra por vez ao elemento
+    elementoTitulo.textContent += textoDigitando.charAt(indiceLetra);
+    indiceLetra++;
+    setTimeout(digitar, 70); // 70ms entre cada letra
+  }
+}
+
+// Inicia o efeito assim que a página carrega
+digitar();
+
+
+// ================================================
+// 6. FADE-IN AO ROLAR A PÁGINA
+// Cards aparecem suavemente conforme o usuário rola
+// ================================================
+
+// Adiciona a classe 'fade-in' em todos os cards automaticamente
+const todosOsCards = document.querySelectorAll('.card, .sobre-card, .projeto');
+todosOsCards.forEach(function(card) {
+  card.classList.add('fade-in');
+});
+
+// IntersectionObserver: detecta quando o elemento entra na área visível da tela
+const observador = new IntersectionObserver(function(entradas) {
+  entradas.forEach(function(entrada) {
+    if (entrada.isIntersecting) {
+      // Quando o card entra na tela, adiciona 'visivel' para acionar o CSS
+      entrada.target.classList.add('visivel');
+    }
+  });
+}, { threshold: 0.15 }); // Dispara quando 15% do card está visível
+
+// Aplica o observador em cada card
+todosOsCards.forEach(function(card) {
+  observador.observe(card);
+});
+
+
+// ================================================
+// 7. BARRAS DE HABILIDADES ANIMADAS
+// Anima a largura das barras quando entram na tela
+// ================================================
+
+const barras = document.querySelectorAll('.barra-preenchimento');
+
+const observadorBarras = new IntersectionObserver(function(entradas) {
+  entradas.forEach(function(entrada) {
+    if (entrada.isIntersecting) {
+      // Lê o valor do atributo data-nivel (ex: 85) e define a largura em %
+      const nivel = entrada.target.getAttribute('data-nivel');
+      entrada.target.style.width = nivel + '%';
+      // Para de observar após animar (evita repetição)
+      observadorBarras.unobserve(entrada.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+barras.forEach(function(barra) {
+  observadorBarras.observe(barra);
+});
